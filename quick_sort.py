@@ -78,12 +78,23 @@ def merge(first, second):
     return final
 
 
+# INSERTION SORT
+
+def insertion_sort(nums):
+    
+    for i in range(0, len(nums)):
+        j = i
+        while j > 0 and nums[j-1] > nums[j]:
+            nums[j], nums[j-1] = nums[j-1], nums[j]
+            j -= 1
+
+
 
 
 
 def main():
 
-    # QUICKSORT
+    # QUICK SORT
 
     print("Beginning Quicksort....")
 
@@ -93,7 +104,7 @@ def main():
     print(f"After: {answer}\n")
 
 
-    # BUBBLESORT
+    # BUBBLE SORT
 
     print("Beginning Bubblesort....")
     arr2 = [random.randrange(0, 11) for i in range(10)]
@@ -103,13 +114,24 @@ def main():
 
 
 
-    # MERGESORT
+    # MERGE SORT
 
     print("Beginning Mergesort....")
     arr3 = [random.randrange(0, 11) for i in range(10)]
     print(f"Before: {arr3}")
     answer = merge_sort(arr3)
     print(F"After: {answer}\n")
+
+
+
+    # INSERTION SORT
+
+    print("Beginning Insertion sort....")
+    arr4 = [random.randrange(0, 11) for i in range(10)]
+    print(f"Before: {arr4}")
+    insertion_sort(arr4)
+    print(F"After: {arr4}\n")
+
 
 
 
